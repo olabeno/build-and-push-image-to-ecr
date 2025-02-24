@@ -40,7 +40,7 @@ jobs:
     - name: Build image
       run: |
         docker build . --tag ${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest 
-        docker push ${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest
+        docker push ${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest -f
         working-directory: app
 
 # - name: Docker login build and push Docker Image to Public ECR
